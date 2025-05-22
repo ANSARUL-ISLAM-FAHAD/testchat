@@ -20,6 +20,45 @@
             --chat-color-light: var(--chat-widget-light, #d1fae5);
             --chat-color-surface: var(--chat-widget-surface, #ffffff);
             --chat-color-text: var(--chat-widget-text, #1f2937);
+            // Apply widget styles with completely different design approach
+const widgetStyles = document.createElement('style');
+widgetStyles.textContent = `
+    .chat-assist-widget {
+        --chat-color-primary: var(--chat-widget-primary, #10b981);
+        --chat-color-secondary: var(--chat-widget-secondary, #059669);
+        --chat-color-tertiary: var(--chat-widget-tertiary, #047857);
+        --chat-color-light: var(--chat-widget-light, #d1fae5);
+        --chat-color-surface: var(--chat-widget-surface, #ffffff);
+        --chat-color-text: var(--chat-widget-text, #1f2937);
+        --chat-color-text-light: var(--chat-widget-text-light, #6b7280);
+        --chat-color-border: var(--chat-widget-border, #e5e7eb);
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* রেজিস্ট্রেশন ফর্ম ইনপুট ফিল্ডের স্টাইল */
+    .chat-assist-widget #chat-user-name,
+    .chat-assist-widget #chat-user-email {
+        color: yellow !important;
+        text-shadow: 0 0 1px rgba(0,0,0,0.3); /* টেক্সট রিডেবল করার জন্য */
+    }
+    
+    /* রেজিস্ট্রেশন ফর্ম প্লেসহোল্ডার স্টাইল */
+    .chat-assist-widget #chat-user-name::placeholder,
+    .chat-assist-widget #chat-user-email::placeholder {
+        color: #cccc00 !important;
+        opacity: 1; /* প্লেসহোল্ডার সম্পূর্ণ ভিজিবল রাখে */
+    }
+
+    /* বাকি সব স্টাইল একই থাকবে */
+    .chat-assist-widget .chat-window {
+        position: fixed;
+        bottom: 90px;
+        /* ... অন্যান্য স্টাইল ... */
+    }
+    
+    /* ... আপনার মূল কোডের অন্যান্য সমস্ত স্টাইল রুলস এখানে থাকবে ... */
+`;
+document.head.appendChild(widgetStyles);
             --chat-color-text-light: var(--chat-widget-text-light, #6b7280);
             --chat-color-border: var(--chat-widget-border, #e5e7eb);
             --chat-shadow-sm: 0 1px 3px rgba(16, 185, 129, 0.1);
