@@ -13,6 +13,20 @@
     // Apply widget styles with completely different design approach
     const widgetStyles = document.createElement('style');
     widgetStyles.textContent = `
+    // widgetStyles.textContent এর মধ্যে নিচের কোড যোগ করুন অথবা প্রতিস্থাপন করুন
+widgetStyles.textContent += `
+    /* রেজিস্ট্রেশন ফর্ম ইনপুট টেক্সট কালার */
+    .chat-assist-widget #chat-user-name,
+    .chat-assist-widget #chat-user-email {
+        color: yellow !important;
+    }
+    
+    /* প্লেসহোল্ডার টেক্সট কালার */
+    .chat-assist-widget #chat-user-name::placeholder,
+    .chat-assist-widget #chat-user-email::placeholder {
+        color: #cccc00 !important; /* হালকা ইয়েলো */
+    }
+`;
         .chat-assist-widget {
             --chat-color-primary: var(--chat-widget-primary, #10b981);
             --chat-color-secondary: var(--chat-widget-secondary, #059669);
