@@ -545,6 +545,38 @@ widgetStyles.textContent += `
             transform: none;
         }
     `;
+const widgetStyles = document.createElement('style');
+widgetStyles.textContent = `
+    /* এখানে মূল ভেরিয়েবল ডেফিনিশন */
+    .chat-assist-widget {
+        --chat-color-primary: var(--chat-widget-primary, #10b981);
+        --chat-color-secondary: var(--chat-widget-secondary, #059669);
+        /* ... অন্যান্য ভেরিয়েবল ... */
+    }
+
+    /* ==== এখানে নতুন স্টাইল যোগ করুন ==== */
+    /* রেজিস্ট্রেশন ফর্ম ইনপুট টেক্সট কালার */
+    .chat-assist-widget #chat-user-name,
+    .chat-assist-widget #chat-user-email {
+        color: yellow !important;
+        text-shadow: 0 0 1px black; /* অপশনাল: রিডেবিলিটি বাড়ানোর জন্য */
+    }
+    
+    /* প্লেসহোল্ডার টেক্সট কালার */
+    .chat-assist-widget #chat-user-name::placeholder,
+    .chat-assist-widget #chat-user-email::placeholder {
+        color: #cccc00 !important;
+    }
+    /* ==== নতুন স্টাইল শেষ ==== */
+
+    /* এখানে বাকি সব স্টাইল রুলস */
+    .chat-assist-widget .chat-header {
+        /* ... হেডার স্টাইল ... */
+    }
+    
+    /* ... অন্যান্য সমস্ত স্টাইল রুলস ... */
+`;
+document.head.appendChild(widgetStyles);
     document.head.appendChild(widgetStyles);
 
     // Default configuration
